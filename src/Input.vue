@@ -1,8 +1,7 @@
 <template>
     <div>
-        <input type="text" v-model="message">
+        <input type="text" :value="msg" @input="changeMessage">  <!-- v-bind:value and v-on:input  -->
         <p>{{ message }}</p>
-        <p>{{ msg }}</p>
     </div>
 </template>
 
@@ -12,8 +11,15 @@ export default {
     data(){
         return {
             message : ""
+        };
+    },
+    methods : {
+        changeMessage(event){
+            this.message = event.target.value;
+            this.$emit('updateMessage', this.message);
         }
     }
+
 }
 </script>
 
