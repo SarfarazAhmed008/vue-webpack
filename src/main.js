@@ -10,12 +10,13 @@ Vue.component('app-message', Message);
 Vue.use(VueRouter);
 
 const routes = [
-    { path : '/users', component : Users },
+    { path : '/users/:teamId', component : Users },
     { path : '/', component : Home },
 ];
 
 const router = new VueRouter({
-    routes
+    routes,
+    mode : 'history'
 });
 
 new Vue({
