@@ -15,12 +15,12 @@ const routes = [
 ];
 
 const router = new VueRouter({
-    routes,
+    routes,  // alternatives routes : routes
     mode : 'history'
 });
 
 new Vue({
     el: '#app',
-    router,
+    router,  // alternatives router : router
     render: h => h(App)
 });
